@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation Bar</title>
+
+    <script src="assets/js/jquery-3.6.1.js"></script>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/font-awesome.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#pageContentId").hide();
+            $("#profileDivId").hide();
+            $("#settingDivId").hide();
+        });
+    </script>
+</head>
+<body class="bg-dark">
+
+    <div class="container loaderCls" id="pageLoaderId">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div id="pageContentId">
+        <div class="col-12 px-3" style="margin-bottom: 100px;">
+            <div class="card card-tabs my-3" id="homeDivId">
+                <div class="card-body">
+                    <p style="font-size: 30px;">Home</p>
+                </div>
+            </div>
+            <div class="card card-tabs my-3" id="profileDivId">
+                <div class="card-body">
+                    <h1 class="fs-1">Profile</h1>
+                </div>
+            </div>
+            <div class="card card-tabs my-3" id="settingDivId">
+                <div class="card-body">
+                    <h1 class="fs-1">Setting</h1>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-12 fixed-bottom px-3 py-3">
+            <div class="card mobile-nav-bar-1">
+                <div class="card-body nav-container-1">
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-1"><span class="fas fa-cog fa-2x nav-icon"></span></a></div>
+                        <div class="col-4 d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-2 active"><span class="fas fa-home fa-2x nav-icon"></span></a></div>
+                        <div class="col-4 d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-3"><span class="fas fa-user-circle fa-2x nav-icon"></span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $(".link-1").on("click", function(){
+                $(".mobile-nav-link-1").removeClass("active");
+                $(".link-1").addClass("active");
+
+                $("#homeDivId").hide();
+                $("#profileDivId").hide();
+                setTimeout(function(){
+                    $("#settingDivId").fadeIn();
+                },500);
+            });
+
+            $(".link-2").on("click", function(){
+                $(".mobile-nav-link-1").removeClass("active");
+                $(".link-2").addClass("active");
+                
+                $("#profileDivId").hide();
+                $("#settingDivId").hide();
+                setTimeout(function(){
+                    $("#homeDivId").fadeIn();
+                },500);
+            });
+
+            $(".link-3").on("click", function(){
+                $(".mobile-nav-link-1").removeClass("active");
+                $(".link-3").addClass("active");
+
+                $("#settingDivId").hide();
+                $("#homeDivId").hide();
+                setTimeout(function(){
+                    $("#profileDivId").fadeIn();
+                },500);
+            });
+           
+        });
+    </script>
+    <script>
+        document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'complete') {
+            setTimeout(function(){
+                $("#pageLoaderId").hide();
+                $("#pageContentId").fadeIn();
+            },2000);
+        }
+        }
+    </script>
+</body>
+</html>
