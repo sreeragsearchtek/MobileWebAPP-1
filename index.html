@@ -20,6 +20,7 @@
             $("#pageContentId").hide();
             $("#profileDivId").hide();
             $("#settingDivId").hide();
+            $("#menuDivId").hide();
         });
     </script>
 </head>
@@ -34,17 +35,31 @@
         <div class="col-12 px-3" style="margin-bottom: 100px;">
             <div class="card card-tabs my-3" id="homeDivId">
                 <div class="card-body">
-                    <p style="font-size: 30px;">Home</p>
+                    <p class="fs-1 fw-bold">Home</p>
                 </div>
             </div>
             <div class="card card-tabs my-3" id="profileDivId">
                 <div class="card-body">
-                    <h1 class="fs-1">Profile</h1>
+                    <p class="fs-1 fw-bold">Profile</p>
                 </div>
             </div>
             <div class="card card-tabs my-3" id="settingDivId">
                 <div class="card-body">
-                    <h1 class="fs-1">Setting</h1>
+                    <p class="fs-1 fw-bold">Setting</p>
+                </div>
+            </div>
+            <div class="card card-tabs my-3" id="menuDivId">
+                <div class="card-body">
+                    <p class="fs-1 fw-bold">Menu</p>
+                    <div class="col-12 mb-2">
+                        <a href="#">
+                            <div class="card menu-card-link-1 shadow">
+                                <div class="card-body">
+        
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,9 +68,10 @@
             <div class="card mobile-nav-bar-1">
                 <div class="card-body nav-container-1">
                     <div class="row">
-                        <div class="col-4 d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-1"><span class="fas fa-cog fa-2x nav-icon"></span></a></div>
-                        <div class="col-4 d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-2 active"><span class="fas fa-home fa-2x nav-icon"></span></a></div>
-                        <div class="col-4 d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-3"><span class="fas fa-user-circle fa-2x nav-icon"></span></a></div>
+                        <div class="col d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-1"><span class="fas fa-cog fa-2x nav-icon"></span></a></div>
+                        <div class="col d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-2 active"><span class="fas fa-home fa-2x nav-icon"></span></a></div>
+                        <div class="col d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-3"><span class="fas fa-user-circle fa-2x nav-icon"></span></a></div>
+                        <div class="col d-flex justify-content-center"><a href="#" class="mobile-nav-link-1 link-4"><span class="fas fas fa-bars fa-2x nav-icon"></span></a></div>
                     </div>
                 </div>
             </div>
@@ -71,6 +87,7 @@
 
                 $("#homeDivId").hide();
                 $("#profileDivId").hide();
+                $("#menuDivId").hide();
                 setTimeout(function(){
                     $("#settingDivId").fadeIn();
                 },500);
@@ -82,6 +99,7 @@
                 
                 $("#profileDivId").hide();
                 $("#settingDivId").hide();
+                $("#menuDivId").hide();
                 setTimeout(function(){
                     $("#homeDivId").fadeIn();
                 },500);
@@ -93,8 +111,21 @@
 
                 $("#settingDivId").hide();
                 $("#homeDivId").hide();
+                $("#menuDivId").hide();
                 setTimeout(function(){
                     $("#profileDivId").fadeIn();
+                },500);
+            });
+
+            $(".link-4").on("click", function(){
+                $(".mobile-nav-link-1").removeClass("active");
+                $(".link-4").addClass("active");
+
+                $("#settingDivId").hide();
+                $("#homeDivId").hide();
+                $("#profileDivId").hide();
+                setTimeout(function(){
+                    $("#menuDivId").fadeIn();
                 },500);
             });
            
@@ -107,7 +138,7 @@
             setTimeout(function(){
                 $("#pageLoaderId").hide();
                 $("#pageContentId").fadeIn();
-            },2000);
+            },1000);
         }
         }
     </script>
